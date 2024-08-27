@@ -5,6 +5,7 @@ import com.inghubs.brokage.domain.model.ResponseError;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -84,6 +85,12 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(BadCredentialsException.class)
     @ResponseStatus(code = HttpStatus.UNAUTHORIZED)
     public ResponseError handleException(BadCredentialsException ex) {
+        return new ResponseError(HttpStatus.UNAUTHORIZED, "Invalid username or password", null);
+    }
+
+    @ExceptionHandler(InternalAuthenticationServiceException.class)
+    @ResponseStatus(code = HttpStatus.UNAUTHORIZED)
+    public ResponseError handleException(InternalAuthenticationServiceException ex) {
         return new ResponseError(HttpStatus.UNAUTHORIZED, "Invalid username or password", null);
     }
 
