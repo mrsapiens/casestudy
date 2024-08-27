@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "11684088-e55d-45ec-935b-799d283ed1a4",
+		"name": "Brokage firm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37900210"
+	},
+	"item": [
+		{
+			"name": "Asset",
+			"item": [
+				{
+					"name": "Create Asset",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImF1dGhvcml0eSI6IkFETUlOIiwiZXhwIjoxNzI1MzE1NTU2LCJpYXQiOjE3MjQ3MTA3NTZ9.S6LAQPxFmYhNHOqogXkEG-UWahpQ1NezOX6LvuMHN-4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"assetName\": \"asset3\",\r\n    \"customerId\" : 1,\r\n    \"size\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/asset/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"asset",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customer/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customer/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"john\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customer/assets",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"assets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImF1dGhvcml0eSI6IklORElWSURVQUwiLCJleHAiOjE3MjUzMTA4NTYsImlhdCI6MTcyNDcwNjA1Nn0.gdhJI5bTsK3UuEE45L7h02fsbSotrujxJf-NsVFNxog",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/customer/1/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"1",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsImF1dGhvcml0eSI6IklORElWSURVQUwiLCJleHAiOjE3MjUzMTAzMzYsImlhdCI6MTcyNDcwNTUzNn0.gB7-e-J2aGbuQFOaIUbb_gV-T6L7DhllGfEXLh09mZs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/customer/1/withdraw",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"1",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImF1dGhvcml0eSI6IkFETUlOIiwiZXhwIjoxNzI1MzI0NjY4LCJpYXQiOjE3MjQ3MTk4Njh9.rF2iJY9Yoa4G7eTvyLLO6tdD29IVWONubLcf0F-j-q4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ADMIN3\",\r\n    \"password\" : \"ADMIN3\",\r\n    \"authority\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ADMIN\",\r\n    \"password\" : \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ADMIN3\",\r\n    \"password\" : \"ADMIN3\",\r\n    \"authority\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"ADMIN3\",\r\n    \"password\" : \"ADMIN3\",\r\n    \"authority\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/order/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBRE1JTiIsImF1dGhvcml0eSI6IkFETUlOIiwiZXhwIjoxNzI1MzIxOTMzLCJpYXQiOjE3MjQ3MTcxMzN9.K_Qm_82GeD2xE0M_vNSUg1NVKIlc48hZtEx8JVVluTA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/order/list?customerId=1&dateStart=\"2024-08-26T21:34:55\"&dateEnd=\"2016-01-27T06:34:55\"",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "1"
+								},
+								{
+									"key": "dateStart",
+									"value": "\"2024-08-26T21:34:55\""
+								},
+								{
+									"key": "dateEnd",
+									"value": "\"2016-01-27T06:34:55\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
