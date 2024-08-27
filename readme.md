@@ -24,7 +24,7 @@ Brokage Firm is a platform where Admins can manage transactions of customers to 
 
 Before you begin, ensure you have the following tools installed and running on your system:
 
-- [Docker](https://www.docker.com/get-started) 
+- [Docker](https://www.docker.com/get-started)
 
 ## Setup
 
@@ -76,8 +76,8 @@ The application will be accessible via the specified port (e.g., `http://localho
 
 2. **Database access:**
 
-   In order to access h2-console use the following address `http://localhost:8080/h2-console` 
+   In order to access h2-console use the following address `http://localhost:8080/h2-console`
 
 3. **Postman Request:**
 
-	You can use the exported postman collection to send API requests
+   You can use the exported postman collection to send API requests
