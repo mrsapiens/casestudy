@@ -10,9 +10,6 @@ Brokage Firm is a platform where Admins can manage transactions of customers to 
 - [Setup](#setup)
 - [Running the Project](#running-the-project)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
